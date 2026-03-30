@@ -1,0 +1,289 @@
+    /* Importação da fonte Robuck */
+    @font-face {
+        font-family: 'Robuck';
+        src: url('assets/fonts/Robuck-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    p { 
+        margin-bottom: 1.5rem; 
+    }
+
+    /* Corpo */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        background-color: #eeeeec;
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+        background: url('img/noise.png');
+        background-repeat: repeat;
+
+        opacity: 0.05;
+
+        pointer-events: none;
+        z-index: -1;
+        mix-blend-mode: multiply;
+    }
+
+    .logo {
+        position: relative;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        isolation: isolate;
+    }
+
+    h1 {
+        font-family: 'Robuck', sans-serif;
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-align: center;
+        color: #e51148;
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .pavio {
+        position: absolute;
+        top: 50%;
+        left: 32%;
+        transform: translate(-50%, -60%);
+
+        width: 900px;
+        max-width: 100%;
+        clip-path: inset(0 330px 0 0);
+
+        z-index: 1;
+    }
+
+    .pavio-2 {
+        position: absolute;
+        top: 50%;
+        left: 80.5%;
+        transform: translate(-50%, -60%);
+
+        width: 900px;
+        max-width: 100%;
+        clip-path: inset(0 330px 0 140px);
+
+        z-index: 1; 
+    }
+
+    /* navbar */
+    .navbar {
+        position: absolute;
+        top: 27px;
+        right: 40px;
+        z-index: 9999;
+    }
+
+    .nav-img {
+        width: 150px;
+        max-width: 100%;
+        filter: brightness(0.97);
+    }
+
+    /* botão */
+    .nav-toggle {
+        font-size: 26px;
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+    /* menu lateral */
+    .nav-links {
+        list-style: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 25%;
+
+        padding: 160px 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        background: #c9c9c955;
+        backdrop-filter: blur(12px);
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+
+        z-index: 10000;
+    }
+
+    /* ativo */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    /* overlay ativo */
+    .overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* links */
+    .nav-links a {
+        font-family: 'Robuck', sans-serif;
+        font-weight: normal;
+        color: #e51148;
+        text-decoration: none;
+        font-size: 50px;
+
+        text-shadow: 0 0 10px rgba(229, 17, 72, 0.5);
+    }
+
+    .nav-links a:hover {
+        color: #bd0e3d;
+        transition: color 0.3s ease;
+    }
+
+    .content {
+        width: 800px;
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 20px;
+        font-size: 18px;
+        color: #555;
+    }
+
+
+    /* responsivo */
+    @media (max-width: 1350px) {
+
+        .pavio {
+            left: 39%;
+
+            clip-path: inset(0 500px 0 0);
+        }
+
+        .pavio-2 {
+            left: 69%;
+            clip-path: inset(0 330px 0 410px);
+        }
+
+        .nav-links {
+            width: 30%;
+        }
+
+    }
+
+    @media (max-width: 1200px) {
+
+        .pavio {
+            left: 50%;
+
+            clip-path: inset(0 590px 0 0);
+        }
+
+        .pavio-2 {
+            left: 74%;
+            clip-path: inset(0 330px 0 320px);
+        }
+
+        .nav-links {
+            width: 40%;
+        }
+
+    }
+
+    @media (max-width: 900px) {
+
+        .pavio {
+            left: 50%;
+
+            clip-path: inset(0 550px 0 0);
+        }
+
+        .pavio-2 {
+            left: 74%;
+            clip-path: inset(0 330px 0 350px);
+        }
+
+    }
+
+    @media (max-width: 800px) {
+
+        .logo {
+            justify-content: flex-start;
+            padding-left: 40px;
+        }
+
+        h1 {
+            text-align: left;
+            font-size: 4rem;
+        }
+
+        .pavio {
+            clip-path: inset(0 4000px 0 0);
+        }
+
+        .navbar {
+            top: 40px;
+            right: 20px;
+        }
+
+        .nav-img {
+            max-width: 120px;
+        }
+
+        .nav-links {
+            width: 100%;
+            padding: 260px 40px;
+            display: flex;
+        }
+
+        .nav-links a {
+            font-size: 50px;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .pavio-2 {
+            clip-path: inset(0 4000px 0 0);
+        }
+
+    }
+
+    @media (max-width: 425px) {
+
+        .logo {
+            padding-left: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+        
+    }
