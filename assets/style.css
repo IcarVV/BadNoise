@@ -17,8 +17,9 @@
         margin-bottom: 1.5rem; 
     }
 
-    html {
-        scroll-behavior: smooth;
+    html, body {
+        background-color: #eeeeec;
+        color: #333;
         overflow-x: hidden;
     }
 
