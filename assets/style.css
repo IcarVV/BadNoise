@@ -1,3 +1,6 @@
+    /* Importação do Tailwind CSS */
+    @import "tailwindcss"; 
+    
     /* Importação da fonte Robuck */
     @font-face {
         font-family: 'Robuck';
@@ -92,7 +95,7 @@
         z-index: 1; 
     }
 
-    /* navbar */
+    /* navbar*/
     .navbar {
         position: absolute;
         top: 27px;
@@ -189,7 +192,7 @@
 
         .pavio-2 {
             left: 69%;
-            clip-path: inset(0 330px 0 410px);
+            clip-path: inset(0 250px 0 390px);
         }
 
         .nav-links {
@@ -219,15 +222,12 @@
 
     @media (max-width: 900px) {
 
-        .pavio {
-            left: 50%;
-
-            clip-path: inset(0 550px 0 0);
+        .pavio-2 {
+            display: none;
         }
 
-        .pavio-2 {
-            left: 74%;
-            clip-path: inset(0 330px 0 350px);
+        .pavio {
+            display: none;
         }
 
     }
@@ -242,10 +242,6 @@
         h1 {
             text-align: left;
             font-size: 4rem;
-        }
-
-        .pavio {
-            clip-path: inset(0 4000px 0 0);
         }
 
         .navbar {
