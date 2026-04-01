@@ -17,6 +17,11 @@
         margin-bottom: 1.5rem; 
     }
 
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
     /* Corpo */
     body {
         font-family: Arial, sans-serif;
