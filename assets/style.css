@@ -1,7 +1,7 @@
     /* Importação da fonte Robuck */
     @font-face {
         font-family: 'Robuck';
-        src: url('assets/fonts/Robuck-Regular.otf') format('opentype');
+        src: url('./fonts/Robuck-Regular.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
     }
