@@ -1,9 +1,4 @@
-    /* Importação do Tailwind CSS */
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-    
-    /* Importação da fonte Robuck */
+   /* Importação da fonte Robuck */
     @font-face {
         font-family: 'Robuck';
         src: url('fonts/robuck-regular.woff2') format('woff2');
