@@ -1,1 +1,0 @@
-content: ["./**/*.html", "./assets/js/**/*.js"]
