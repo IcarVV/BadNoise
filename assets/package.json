@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./assets/style.css -o ./assets/output.css",
+    "watch": "tailwindcss -i ./assets/style.css -o ./assets/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/IcarVV/BadNoise/issues"
   },
-  "homepage": "https://github.com/IcarVV/BadNoise#readme"
+  "homepage": "https://github.com/IcarVV/BadNoise#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
+  }
 }
