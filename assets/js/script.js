@@ -1,26 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector(".nav-toggle");
-    const menu = document.getElementById("navLinks");
+    const button  = document.querySelector(".nav-toggle");
+    const menu    = document.getElementById("navLinks");
+    const overlay = document.querySelector(".overlay");
 
-    // abrir/fechar menu
-    button.addEventListener("click", () => {
-        menu.classList.toggle("active");
+    // Abre/fecha o menu e atualiza aria-expanded
+    function toggleMenu(force) {
+        const isOpen = typeof force === "boolean" ? force : !menu.classList.contains("active");
+        menu.classList.toggle("active", isOpen);
+        overlay.classList.toggle("active", isOpen);
+        button.setAttribute("aria-expanded", isOpen);
+    }
+
+    // Botão hamburguer
+    button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
 
-    // fechar ao clicar em link
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-            menu.classList.remove("active");
-        });
+    // Fecha ao clicar em qualquer link do menu
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => toggleMenu(false));
     });
 
-    // fechar clicando fora
-    document.addEventListener("click", (e) => {
-        if (!button.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.remove("active");
-        }
+    // Fecha ao clicar no overlay
+    overlay.addEventListener("click", () => toggleMenu(false));
+
+    // Fecha com tecla Escape
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") toggleMenu(false);
+    });
+
+    document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        toggleMenu(false);
+        button.blur(); // remove o foco do botão
+    }
     });
 });
-
-const normalize = (path) =>
-  path.replace("index.html", "").replace(/\/$/, "");
